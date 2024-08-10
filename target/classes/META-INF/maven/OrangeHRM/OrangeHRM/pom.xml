@@ -6,37 +6,35 @@
   
   <dependencies>
   
-   <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-java</artifactId>
-      <version>4.23.0</version>
-    </dependency>
-   <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-<!-- https://mvnrepository.com/artifact/org.testng/testng -->
-<dependency>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>7.10.2</version>
-    <scope>test</scope>
-</dependency>
-
- <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
-      <version>1.7.32</version>
-    </dependency>
+  <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+ 
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.5</version>
+            <scope>test</scope>
+        </dependency>
   </dependencies>
-   <build>
-    <sourceDirectory>src</sourceDirectory>
-    <plugins>
-      <plugin>
+  <build>
+     <plugins>
+      
+     <!--  Compiler Plugin -->
+     
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.1</version>
         <configuration>
-          <release>17</release>
-          <encoding>UTF-8</encoding>
+           <source>11</source>
+           <target>11</target>
         </configuration>
-      </plugin>
+    </plugin>
+      
+      <!--  Plugin used to execute tests -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -45,37 +43,9 @@
           <suiteXmlFiles>
             <suiteXmlFile>testng.xml</suiteXmlFile>
           </suiteXmlFiles>
-          <includes>
-            <include>**/*ClassLogin.java</include>
-          </includes>
-          <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
-    </plugins>
+     </plugins>
   </build>
-
-  <profiles>
-    <profile>
-      <id>Regression</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0-M5</version>
-            <configuration>
-              <suiteXmlFiles>
-                <suiteXmlFile>testng.xml</suiteXmlFile>
-              </suiteXmlFiles>
-              <includes>
-                <include>**/*ClassLogin.java</include>
-              </includes>
-              <encoding>UTF-8</encoding>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
   
 </project>
