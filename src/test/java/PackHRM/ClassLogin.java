@@ -30,9 +30,11 @@ public class ClassLogin {
 	
 	
 	@Test
-	public void Test1()
+	public void Test1() throws InterruptedException
 	{
 	   driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[1]/aside/nav/div[2]/ul/li[1]/a")).click();
+	   Thread.sleep(2000);
+	   driver.findElement(By.xpath("/html/body/div/div[1]/div[2]/div[2]/div/div[1]/div[2]/form/div[1]/div/div[1]/div/div[2]")).sendKeys("Hina");
 	}
 	
 	
